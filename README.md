@@ -32,4 +32,6 @@ int main() {
     return 0;
 }
 ```
-Command used to compile the C program is gcc <filename.c> or gcc -o <binary file name> <filename.c>and to run we use ./a.out or ./<binary file name>
+Command used to compile the C program is `gcc <filename.c>` or `gcc -o <binary_file_name> <filename.c>`  
+To run the program, use `./a.out` or `./<binary_file_name>`
+ 
