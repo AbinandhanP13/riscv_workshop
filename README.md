@@ -133,13 +133,13 @@ Type the below Cat command on the terminal
 cat 1_to_9.c
 cat load.s
 ```
-Output console:
+Output on console:
 ![D2_Simulate New C Program With Function Call-part 1](https://github.com/user-attachments/assets/bb6f9535-dbdc-4b36-bc2a-dd335dc66cf2)
 
 - Type `riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o 1to9_custom.o 1to9_custom.c load.S` to compile the program.
 - Now type `spike pk 1to9_custom.o` to simulate spike function.
 
-Output console:
+Output on console:
 ![D2_Simulate New C Program With Function Call-part 2](https://github.com/user-attachments/assets/c4c4bcd2-e6e5-4d2f-a334-d7dfa508012e)
 
 - To view to disassemble and view the object file in readable format, we use `riscv64-unknown-elf-objdump -d 1to9_custom.o | less.`
@@ -152,3 +152,64 @@ Output console:
   
       git clone https://github.com/kunalg123/riscv_workshop_collaterals.git
       cd riscv_workshop_collaterals/labs
+Output on Console:
+![D2_Program on RISCV CPU-part 1](https://github.com/user-attachments/assets/a217f79a-2d17-4fe4-a1e7-f6bfcee1e1e3)
+
+- Now type `vim picorv32.v `
+Output on Console:
+![D2_Program on RISCV CPU-part 2](https://github.com/user-attachments/assets/ec061a9b-1ab5-4e69-b8c7-377ad639c3f7)
+
+# DAY 3: Digital Logic with TL-Verilog and Makerchip
+### Logic Gates  
+Logic gates are the basic components of digital electronics. They take binary inputs (0 or 1) and produce binary outputs based on specific logical rules. These gates implement Boolean algebra and are used to build more complex gates like NAND, NOR, XOR, and XNOR.
+
+### Combinational Logic  
+Combinational logic circuits are digital systems whose output depends only on the current input values. These circuits do not have memory or store any past inputs. They are constructed using gates like AND, OR, NOT, and others.
+
+### Sequential Logic  
+Sequential logic circuits generate output based on both current inputs and past inputs. They include memory elements that store the previous state, allowing the circuit to "remember" history. Flip-flops and latches are key components in sequential logic.
+
+### Flip-Flops  
+A flip-flop is a bistable memory element used in digital circuits to store one bit of data. It remains in one of two stable states (0 or 1) until triggered by an external control signal, such as a clock pulse. Flip-flops are used in building registers, counters, and state machines.
+
+### Pipelined logic
+Pipelined logic, or pipelining, is a technique in computer architecture and digital circuit design that increases throughput by dividing a task into multiple stages and executing them in parallel.
+
+### Validity  
+Validity ensures that only useful parts of a chip are active during operation. In many chips, unused gates remain idle but still consume power. Validity eliminates these inactive gates to save energy and improve efficiency.
+
+##DAY 3 Lab:
+1. Combinational Calculator:
+   ![image](https://github.com/user-attachments/assets/589f68e0-bb2d-448e-8c55-2e8abc52a070)
+
+2. Sequential Calculator:
+   ![image](https://github.com/user-attachments/assets/5952e9a2-ed5b-4891-b5f4-9e728a7ddf73)
+
+3. Cycle Calculator:
+   ![image](https://github.com/user-attachments/assets/9170199d-b5cb-4f87-84d5-e1394421993e)
+
+4. Total Distance Using Pythagoras:
+   ![image](https://github.com/user-attachments/assets/1a9d7e24-2db8-4324-b21c-c4671c4c200b)
+
+5. 2-Cycle calculator with Validity:
+   ![image](https://github.com/user-attachments/assets/36eb1149-8f34-498e-b25e-81e086e30333)
+
+# DAY 4: Basic RISC-V CPU Micro-architecture.   
+## Single-Cycle RISC-V Processor Architecture:
+![image](https://github.com/user-attachments/assets/f029a05c-036a-4945-be29-56622d769e46)
+
+- PC (Program Counter): Holds the address of the current instruction.
+
+- IMem Rd (Instruction Memory Read): Fetches the instruction from memory.
+
+- Dec (Decoder): Decodes the fetched instruction and determines control signals.
+
+- RF Rd / RF Wr (Register File Read/Write): Reads/writes data from/to CPU registers.
+
+- ALU (Arithmetic Logic Unit): Performs arithmetic or logic operations.
+
+- DMem Rd/Wr (Data Memory Read/Write): Used for load/store instructions to access memory.
+
+- Muxes (Multiplexers): Control which data path is selected.
+
+- +1 and + blocks: Handle PC update logic, for sequential or branch operations.
