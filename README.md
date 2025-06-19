@@ -31,4 +31,5 @@ int main() {
     printf("Sum of numbers from 1 to %d is %d\n", n, sum);
     return 0;
 }
-
+```
+Command used to compile the C program is gcc <filename.c> or gcc -o <binary file name> <filename.c>and to run we use ./a.out or ./<binary file name>
