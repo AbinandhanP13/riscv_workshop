@@ -213,3 +213,38 @@ Validity ensures that only useful parts of a chip are active during operation. I
 - Muxes (Multiplexers): Control which data path is selected.
 
 - +1 and + blocks: Handle PC update logic, for sequential or branch operations.
+
+## DAY 4 Lab:
+1. Reset
+   ![image](https://github.com/user-attachments/assets/4ffc56a6-6172-4171-af6a-6b273602988e)
+
+2. Fetch:
+   ![image](https://github.com/user-attachments/assets/666cd993-36b8-48c7-a25e-768b922e077a)
+
+3. Decode with Branches:
+   ![image](https://github.com/user-attachments/assets/feeda875-7ca8-4544-be45-ae81e54d1b44)
+
+4. Register File Read:
+   ![image](https://github.com/user-attachments/assets/7c5b4eeb-9b91-4534-a043-60d430891aa4)
+
+5. Register File write:
+   ![image](https://github.com/user-attachments/assets/e7b012d7-63ce-4b16-9f7f-ef6d03e8f14e)
+
+6. ALU Operations:
+   ![image](https://github.com/user-attachments/assets/ddec97a0-3520-41bd-a6db-60e89294ad6f)
+   
+7. Testbench:
+   ![image](https://github.com/user-attachments/assets/50069f7a-2ec4-4f72-a4f1-5283b17693f4)
+
+# DAY 5: Pipelining the RISC-V Core
+## Pipelined RISC-V Core  
+On Day 5, a 4-stage pipelined RISC-V core was developed, building on the single-cycle design from Day 4. This core supports all base integer instruction sets and includes logic for both load and store operations through a dedicated data memory block.
+
+## Pipeline Hazards and Handling  
+To resolve issues caused by instruction dependencies, **register bypassing** and **squashing** techniques were implemented. These help prevent hazards like "read-after-write" and incorrect branching, which are common in pipelined architectures.
+
+## Testing the Pipelined Design  
+The pipelined CPU was tested using assembly code that included load and store operations. This validated the functional correctness and hazard handling in the new pipelined setup.
+
+## Timing Abstraction in TL-Verilog  
+The use of **Timing Abstraction** in TL-Verilog made it easier to convert the non-pipelined design into a pipelined one. This abstraction allows for retiming and restructuring of the pipeline without introducing functional bugs, simplifying the design and debugging process.
