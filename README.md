@@ -20,6 +20,7 @@ The day concluded with an overview of the hardware design flow—from RISC-V ISA
 ## DAY 1 Lab:
 1. C program for adding numbers from 1 to n:
 
+   - Create a file, paste the below code and save it on your computer
 ```c
 #include <stdio.h>
 
@@ -35,3 +36,16 @@ int main() {
 Command used to compile the C program is `gcc <filename.c>` or `gcc -o <binary_file_name> <filename.c>`  
 To run the program, use `./a.out` or `./<binary_file_name>`
  
+![D1_sum _1ton](https://github.com/user-attachments/assets/0a6ae92e-abf9-4cfb-8113-fcb0b0864beb)
+
+2. C program for adding numbers from 1 to n using RISC-V toolchain:
+
+   The same C program is now compiled using the RISC-V toolchain.  
+    - Command used to compile the C program is `riscv64-unknown-elf-gcc -Ofast -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c`.  
+    - To disassemble and view the object file in readable format, we use the command `riscv64-unknown-elf-objdump -d sum1ton.o`.  
+    - To run the program, we use Spike, a RISC-V simulator, with the command `spike pk sum1ton.o`.  
+    - Spike also has a debug mode for step-by-step execution, which can be invoked using `spike -d pk sum1ton.o`.
+
+  
+
+   
