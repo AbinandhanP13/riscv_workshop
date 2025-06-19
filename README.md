@@ -19,4 +19,14 @@ Signed range: −2⁶³ to 2⁶³−1
 The day concluded with an overview of the hardware design flow—from RISC-V ISA to RTL (e.g., PicoRV32), synthesis, and physical design using tools like Qflow.
 ## DAY 1 Lab:
 1) C program for adding numbers from 1 to n:
-   
+
+   '''c
+     #include <stdio.h>
+    int main() {
+    int i, sum = 0, n = 100;
+    for (i=1; i <= n; ++i) {
+    sum += i; }
+    printf("Sum of numbers from 1 to %d is %d\n", n, sum);
+    return 0;
+  }
+  '''   
